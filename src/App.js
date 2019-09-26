@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom';
+import Form from 'muicss/lib/react/form';
+import Input from 'muicss/lib/react/input';
+import Textarea from 'muicss/lib/react/textarea';
+import Button from 'muicss/lib/react/button';
+import Dropdown from 'muicss/lib/react/dropdown';
+import DropdownItem from 'muicss/lib/react/dropdown-item';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  render() {
+    return (
+      <Form>
+        <legend>Todo Manager </legend>
+        <Input placeholder="Title" required="required" />
+        <Input placeholder="Description" required="required" />
+        <input type="date" name="Due Date" ></input> 
+        <Dropdown color="primary" label="Status"> 
+        <DropdownItem >ToDo</DropdownItem> 
+        <DropdownItem>Ongoing</DropdownItem> 
+        <DropdownItem>Stalled</DropdownItem> 
+        <DropdownItem>Done</DropdownItem>
+      </Dropdown>
+        <Button variant="raised">Submit</Button>
+      </Form>
+    );
+  }
 }
 
-export default App;
+export default App ; 
